@@ -5,3 +5,5 @@ authors = ["Juuso Tuononen <jutuon@outlook.com>"]
 
 [dependencies]
 videocore = "0.1"
+lazy_static = "1.0"
+bitflags = "1.0"
