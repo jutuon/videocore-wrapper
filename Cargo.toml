@@ -1,0 +1,7 @@
+[package]
+name = "videocore-wrapper"
+version = "0.1.0"
+authors = ["Juuso Tuononen <jutuon@outlook.com>"]
+
+[dependencies]
+videocore = "0.1"
