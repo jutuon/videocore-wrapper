@@ -2,6 +2,7 @@
 use std::marker::PhantomData;
 use std::sync::Arc;
 use std::ptr;
+use std::fmt;
 
 use videocore::dispmanx;
 use videocore::dispmanx::{Modeinfo, Transform};
@@ -85,6 +86,7 @@ pub enum DisplayID {
     ForceOther = dispmanx::DISPMANX_ID_FORCE_OTHER,
 }
 
+#[derive(Debug)]
 pub struct UpdateBuilder {
     _bcm_host_handle: BCMHostHandle,
     update_handle: dispmanx::UpdateHandle,
@@ -148,6 +150,7 @@ impl UpdateBuilder {
     }
 }
 
+#[derive(Debug)]
 pub struct Element {
     _display_handle: Arc<DisplayHandle>,
     element_handle: dispmanx::ElementHandle,
@@ -210,6 +213,12 @@ pub enum Protection {
 pub struct Window {
     element: Element,
     raw_window: dispmanx::Window,
+}
+
+impl fmt::Debug for Window {
+    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+        write!(f, "Window")
+    }
 }
 
 impl Window {
